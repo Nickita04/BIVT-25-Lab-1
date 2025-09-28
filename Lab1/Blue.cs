@@ -109,16 +109,16 @@
             int coinsB = b / 2;
             int coinsC = c / 2;
 
-            if (coinsA < 1 || coinsB < 1 || coinsC < 1)
-                answer = false;
+            if (coinsA >= 1 && coinsB >= 1 && coinsC >= 1)
+            {
+                int target = Math.Max(coinsA, Math.Max(coinsB, coinsC));
 
-            int minCoins = Math.Min(coinsA, Math.Min(coinsB, coinsC));
-            int maxCoins = Math.Max(coinsA, Math.Max(coinsB, coinsC));
+                if (coinsC + 1 > target)
+                    target = coinsC + 1;
 
-            if (maxCoins - minCoins <= 1)
-                answer = true;
-            else
-                answer = false;
+                if (coinsA <= target && coinsB <= target && coinsC <= target)
+                    answer = true;
+            }
             // end
 
             return answer;

@@ -109,15 +109,19 @@
             int coinsB = b / 2;
             int coinsC = c / 2;
 
-            if (coinsA >= 1 && coinsB >= 1 && coinsC >= 1)
+            int coins = coinsA + coinsB + coinsC;
+            int sumCoins = coins / 3;
+            if (coins % 3 == 0 && coins >= 3)
+
             {
-                int target = Math.Max(coinsA, Math.Max(coinsB, coinsC));
-
-                if (coinsC + 1 > target)
-                    target = coinsC + 1;
-
-                if (target <= a && target <= b && target <= c)
+                answer = true;
+            }
+            else if (coins % 3 != 0)
+            {
+                if (coins - ((sumCoins + 1) * 3 - 1) == 0)
+                {
                     answer = true;
+                }
             }
             // end
 

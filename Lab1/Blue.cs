@@ -58,8 +58,10 @@
             double answer = 0;
 
             // code here
-            if (x > -1) && (x <= 0) answer = x + 1;
-            if x > 0 answer = 1;
+            if (x > -1 && x <= 0)
+                answer = x + 1;
+            if (x > 0)
+                answer = 1;
             // end
 
             return answer;

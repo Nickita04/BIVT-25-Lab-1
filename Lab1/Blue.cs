@@ -111,12 +111,14 @@
 
             if (coinsA >= 1 && coinsB >= 1 && coinsC >= 1)
             {
-                int target = Math.Max(coinsA, Math.Max(coinsB, coinsC));
+                int minTarget = Math.Max(coinsA, Math.Max(coinsB, coinsC));
 
-                if (coinsC + 1 > target)
-                    target = coinsC + 1;
+                if (coinsC + 1 > minTarget)
+                    minTarget = coinsC + 1;
 
-                if (coinsA <= target && coinsB <= target && coinsC <= target)
+                int maxTarget = Math.Min(a, Math.Min(b, c));
+
+                if (minTarget <= maxTarget)
                     answer = true;
             }
             // end
